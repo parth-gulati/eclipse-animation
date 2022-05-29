@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap');
+
+body {
+    background-color: white;
+    animation: dayToNight 10s infinite 1.5s;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.sun {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #fcd25b;
+    border: 3px solid #fcd25b;
+}
+
+.shadow {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: white;
+    top: -5px;
+    left: 0;
+    animation: moveShadow 10s infinite 1.5s;
+}
+
+.upper-div {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upper-text {
+    animation: topText 10s infinite 1.5s;
+    font-family: 'Farro', sans-serif;
+}
+
+.lower-text {
+    font-family: 'Farro', sans-serif;
+    animation: lowerText 10s infinite 1.5s;
+}
+
+.lower-div {
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes topText {
+    0% {
+        color: rgba(0,0,0,1);
+    }
+    25% {
+        color: rgba(0,0,0,1);
+    }
+    50% {
+        color: rgba(0,0,0,0);
+    }
+    75% {
+        color: rgba(0,0,0,0);
+    }
+    100% {
+        color: rgba(0,0,0,1);
+    }
+}
+
+@keyframes lowerText {
+    0% {
+        color: white;
+        opacity: 0;
+    }
+    25% {
+        color: white;
+        opacity: 0;
+    }
+    75% {
+        color: white;
+        opacity: 1;
+    }
+    100% {
+        color: white;
+        opacity: 0;
+    }
+}
+
+@keyframes dayToNight {
+    0% {
+        background: white;
+    }
+    50% {
+        background: black;
+    }
+    100% {
+        background: white;
+    }
+
+}
+
+@keyframes moveShadow {
+    0% {
+        transform: translateX(150px);
+        background-color: white;
+    }
+    50% {
+        transform: translateX(-10px);
+        background-color: black;
+    }
+    100% {
+        transform: translateX(-170px);
+        background-color: white;
+    }
+
+}
